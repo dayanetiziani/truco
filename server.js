@@ -1,3 +1,4 @@
+//import './config.js'; // Isso carregará as variáveis de ambiente para todo o projeto
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -8,6 +9,10 @@ import cookieParser from 'cookie-parser';
 import socketInit from './sockets/trucoSocket.js';
 import swaggerUi from 'swagger-ui-express'
 import { createRequire } from "module";
+import dotenv from 'dotenv';
+
+// Carrega as variáveis de ambiente do arquivo .env
+dotenv.config()
 
 
 

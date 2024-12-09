@@ -3,10 +3,6 @@
 import { useContext, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import UserContext from '../context/userContext';
-import dotenv from 'dotenv';
-
-// Carrega as variáveis de ambiente do arquivo .env
-dotenv.config();
 
 export default function Login() {
     const [email, setEmail] = useState('');

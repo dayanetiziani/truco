@@ -1,8 +1,5 @@
 import { io } from 'socket.io-client';
-import dotenv from 'dotenv';
 
-// Carrega as variáveis de ambiente do arquivo .env
-dotenv.config();
 
 let socket;
 

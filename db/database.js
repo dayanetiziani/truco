@@ -1,8 +1,4 @@
 import mysql from 'mysql2';
-import dotenv from 'dotenv';
-
-// Carrega as variáveis de ambiente do arquivo .env
-dotenv.config();
 
 export default class Database {
     #conexao;
