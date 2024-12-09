@@ -4,7 +4,7 @@ let socket;
 
 export const getSocket = (query) => {
     if (!socket) {
-        socket = io(process.env.URLSERVER, {query});
+        socket = io(process.env.URL_SERVIDOR, {query});
     }
     return socket;
 };
