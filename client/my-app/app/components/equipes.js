@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import { useRouter, useParams } from 'next/navigation';
 
 export default function Equipes() {
-
+ //testando deploy
     const router = useRouter();
     const URL = 'http://localhost:5000';
     const URLFront = 'http://localhost:3000';
