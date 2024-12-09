@@ -3,6 +3,10 @@
 import { useContext, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import UserContext from '../context/userContext';
+import dotenv from 'dotenv';
+
+// Carrega as variáveis de ambiente do arquivo .env
+dotenv.config();
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -13,7 +17,7 @@ export default function Login() {
     const BuscarUsuario = async (usuario) => {
         try {
 
-            const response = await fetch('http://localhost:5000/usuarios/login', {
+            const response = await fetch(process.env.URL_SERVIDOR +'/usuarios/login', {
                 method: 'POST',
                 credentials: 'include',
                 headers: {
