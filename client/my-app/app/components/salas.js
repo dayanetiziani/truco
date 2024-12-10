@@ -7,8 +7,8 @@ import { io } from 'socket.io-client';
 export default function Salas() {
 
     const router = useRouter();
-    const URL = 'http://localhost:5000';
-    const URLFront = 'http://localhost:3000';
+    const URL = process.env.URL_SERVER;
+    const URLFront = process.env.URL_FRONTEND;
     const [lista, setLista] = useState([]);
     const [idAlteracao, setAlteracao] = useState(0);
     const sala = useRef('');

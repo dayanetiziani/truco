@@ -9,9 +9,10 @@ import cookieParser from 'cookie-parser';
 import socketInit from './sockets/trucoSocket.js';
 import swaggerUi from 'swagger-ui-express'
 import { createRequire } from "module";
-import dotenv from 'dotenv';
+import dotenv, { config } from 'dotenv';
 
 // Carrega as variáveis de ambiente do arquivo .env
+
 dotenv.config()
 
 
@@ -26,6 +27,7 @@ import maoRoutes from './Routes/maoRoutes.js';
 import rodadaRoutes from './Routes/rodadaRoutes.js';
 import cartaRoutes from './Routes/cartaRoutes.js';
 
+const config = parse(process.env.MYSQL_URL);
 const require = createRequire(import.meta.url);
 const outputJson = require("./swagger-output.json");
 
@@ -95,7 +97,7 @@ const socketList = new Server(server, {
 //   });
 // });
 
-app.use(cors({origin: 'http://localhost:3000', credentials: true}));
+app.use(cors({origin: config(), credentials: true}));
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.static(__dirname + '/public'));
@@ -113,7 +115,7 @@ app.use('/carta', cartaRoutes);
 
 await socketInit(socketList);
 
-const PORT = process.env.PORT || 5000;
+const PORT = config.PORT || 5000;
 server.listen(PORT, () => {
   console.log(`BackEnd - Servidor web e WebSocket rodando na porta ${PORT}!`);
 });

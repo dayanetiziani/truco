@@ -13,7 +13,7 @@ export default function Login() {
     const BuscarUsuario = async (usuario) => {
         try {
 
-            const response = await fetch(process.env.URL_SERVIDOR +'/usuarios/login', {
+            const response = await fetch(URL +'/usuarios/login', {
                 method: 'POST',
                 credentials: 'include',
                 headers: {

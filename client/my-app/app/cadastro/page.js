@@ -10,7 +10,7 @@ export default function CadastroUsuario() {
 
     const AddUsuario = async (usuario) => {
         try {
-            const response = await fetch(process.env.URL_SERVIDOR +'/usuarios', {
+            const response = await fetch(process.env.URL_SERVER +'/usuarios', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
