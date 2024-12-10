@@ -27,7 +27,7 @@ import maoRoutes from './Routes/maoRoutes.js';
 import rodadaRoutes from './Routes/rodadaRoutes.js';
 import cartaRoutes from './Routes/cartaRoutes.js';
 
-const config = parse(process.env.MYSQL_URL);
+
 const require = createRequire(import.meta.url);
 const outputJson = require("./swagger-output.json");
 
