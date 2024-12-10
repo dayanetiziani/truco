@@ -97,7 +97,7 @@ const socketList = new Server(server, {
 //   });
 // });
 
-app.use(cors({origin: '*', credentials: true}));
+app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.static(__dirname + '/public'));
