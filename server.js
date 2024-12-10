@@ -36,8 +36,8 @@ const server = http.createServer(app);
 
 const socketList = new Server(server, {
   cors: {
-      origin: "http://localhost:3000",
-      methods: ["GET", "POST"],
+      origin: process.env.URL_FRONTEND,
+      methods: ["GET", "POST", "PUT", "DELETE"],
       allowedHeaders: ["my-custom-header"],
       credentials: true
   }

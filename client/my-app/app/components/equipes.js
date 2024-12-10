@@ -6,8 +6,8 @@ import { useRouter, useParams } from 'next/navigation';
 export default function Equipes() {
  //testando deploy
     const router = useRouter();
-    const URL = 'http://localhost:5000';
-    const URLFront = 'http://localhost:3000';
+    const URL = process.env.URL_SERVIDOR;
+    const URLFront = process.env.URL_FRONT;
     const params = useParams(); 
     const { sal_id } = params;   
     const [participantes, setParticipantes] = useState([]);
