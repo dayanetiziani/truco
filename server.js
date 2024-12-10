@@ -38,7 +38,7 @@ const server = http.createServer(app);
 
 const socketList = new Server(server, {
   cors: {
-      origin: process.env.URL_FRONTEND,
+      origin: "*",
       methods: ["GET", "POST", "PUT", "DELETE"],
       allowedHeaders: ["my-custom-header"],
       credentials: true
@@ -97,7 +97,7 @@ const socketList = new Server(server, {
 //   });
 // });
 
-app.use(cors({origin: config(), credentials: true}));
+app.use(cors({origin: '*', credentials: true}));
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.static(__dirname + '/public'));
@@ -115,7 +115,7 @@ app.use('/carta', cartaRoutes);
 
 await socketInit(socketList);
 
-const PORT = config.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
   console.log(`BackEnd - Servidor web e WebSocket rodando na porta ${PORT}!`);
 });
